@@ -1,0 +1,9 @@
+This is your new Play 2.1 application
+=====================================
+
+This file will be packaged with your application, when using `play dist`.
+
+# To not store credentials in source control, add conf/dev.conf and use
+# it rather than application.conf like so:
+
+play -Dconfig.file=conf/dev.conf run

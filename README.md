@@ -1,14 +1,19 @@
-Mfizz play-module-twitter
+play-module-twitter
 ===========================================================
 
 Play framework 2.x module to fetch, cache, and display tweets from Twitter
 
+By Mfizz Inc (http://mfizz.com)
+
+Project home:
 http://mfizz.com/oss/play-module-twitter
 
 How-to guide for creating Play 2.x modules using this project as an example:
 http://mfizz.com/blog/2013/07/play-framework-module-maven-central
 
 ## Installation
+
+The module is published to Maven central.
 
 Play framework 2.x:
 
@@ -52,12 +57,6 @@ public class Application extends Controller {
 }
 ```
 
-## Licence
+## License
 
-This software is licensed under the Apache 2 license, quoted below.
-
-Copyright 2013 Mfizz Inc (http://mfizz.com).
-
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this project except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0.
-
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+See LICENSE.txt
