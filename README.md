@@ -1,72 +1,62 @@
-# Emailer  
+Mfizz play-module-twitter
+===========================================================
 
-This plugin provides a simple emailer.
+Play framework 2.x module to fetch, cache, and display tweets from Twitter
 
-## installation
+http://mfizz.com/oss/play-module-twitter
 
-play 2.0.x:
+How-to guide for creating Play 2.x modules using this project as an example:
+http://mfizz.com/blog/2013/07/play-framework-module-maven-central
 
-* add ```"com.typesafe" %% "play-plugins-mailer" % "2.0.4"``` to your dependencies (```project/Build.scala```)
+## Installation
 
+Play framework 2.x:
 
-and then
-* add ```1500:com.typesafe.plugin.CommonsMailerPlugin``` to your ```conf/play.plugins```
+* add ```"com.mfizz" %% "mfz-play-module-twitter" % "1.0"``` to your dependencies (```project/Build.scala```)
 
-furthermore, the following parameters can be configured in ```conf/application.conf```
+* add ```1000:com.mfizz.play.twitter.TwitterPlugin``` to your ```conf/play.plugins```
+
+The following parameters can be configured in ```conf/application.conf```
 
 ```
-smtp.host (mandatory)
-smtp.port (defaults to 25)
-smtp.ssl (defaults to no)
-smtp.tls (defaults to no)
-smtp.user (optional)
-smtp.password (optional)
+twitter.access-token = "required: replace with twitter access token"
+twitter.access-secret =  "required: replace with twitter access secret"
+twitter.consumer-key = "required: replace with twitter consumer key"
+twitter.consumer-secret = "required: replace with twitter consumer secret"
+# optional
+twitter.refresh-interval = 60m
 ```
 
-
-## using it from java 
+## Using it from Java: 
 
 ```java
-import com.typesafe.plugin.*;
-MailerAPI mail = play.Play.application().plugin(MailerPlugin.class).email();
-mail.setSubject("mailer");
-mail.addRecipient("Peter Hausel Junior <noreply@email.com>","example@foo.com");
-mail.addFrom("Peter Hausel <noreply@email.com>");
-//sends html
-mail.sendHtml("<html>html</html>" );
-//sends text/text
-mail.send( "text" );
-//sends both text and html
-mail.send( "text", "<html>html</html>");
-```
+package controllers;
 
-## using it from scala
+import com.mfizz.play.twitter.TwitterPlugin;
 
-```scala
-import com.typesafe.plugin._
-val mail = use[MailerPlugin].email
-mail.setSubject("mailer")
-mail.addRecipient("Peter Hausel Junior <noreply@email.com>","example@foo.com")
-mail.addFrom("Peter Hausel <noreply@email.com>")
-//sends html
-mail.sendHtml("<html>html</html>" )
-//sends text/text
-mail.send( "text" )
-//sends both text and html
-mail.send( "text", "<html>html</html>")
-```
+import play.*;
+import play.mvc.*;
 
-use[MailerPlugin] needs an implicit play.api.Application available to it.  If you do not have one available already from where you are trying to create the mailer you may want to add this line to get the current Application.
-
-```scala
-import play.api.Play.current
+public class Application extends Controller {
+  
+    static public TwitterPlugin TWITTER_PLUGIN = Play.application().plugin(TwitterPlugin.class);
+	
+    public static Result index() {
+        return ok(views.html.index.render());
+    }
+    
+    public static TwitterPlugin twitter() {
+    	return TWITTER_PLUGIN;
+    }
+  
+}
 ```
 
 ## Licence
 
 This software is licensed under the Apache 2 license, quoted below.
 
-Copyright 2012 Typesafe (http://www.typesafe.com).
+Copyright 2013 Mfizz Inc (http://mfizz.com).
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this project except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0.
 
