@@ -5,8 +5,11 @@ Play framework 2.x module to fetch, cache, and display tweets from Twitter
 
 By Mfizz Inc (http://mfizz.com)
 
-Project home:
-http://mfizz.com/oss/play-module-twitter
+Resilient against Twitter API downtime by maintaining a cached copy of the last
+successful API call. Basic rendering of tweets into html for simple display.
+Published to Maven Central for quick and easy installation as a dependency.
+
+Project: http://mfizz.com/oss/play-module-twitter
 
 How-to guide for creating Play 2.x modules using this project as an example:
 http://mfizz.com/blog/2013/07/play-framework-module-maven-central

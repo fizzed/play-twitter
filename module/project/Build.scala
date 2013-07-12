@@ -30,9 +30,6 @@ object ApplicationBuild extends Build {
 	  else
 	    Some("releases" at nexus + "service/local/staging/deploy/maven2")
 	},
-    
-	// optional gpg key to use (if multiple exist for your setup)
-	//usePgpKeyHex("75058B7ADB2DA683"),
 	
 	// in order to pass sonatype's requirements the following properties are required as well
 	startYear := Some(2013),
@@ -43,13 +40,11 @@ object ApplicationBuild extends Build {
     pomExtra := (
       <developers>
         <developer>
-    	  <name>Mfizz Inc</name>
+    	  <name>Mfizz Inc (twitter: @mfizz_inc)</name>
           <email>oss@mfizz.com</email>
-          <twitter>@mfizz_inc</twitter>
         </developer>
         <developer>
-    	  <name>Joe Lauer</name>
-          <twitter>@jjlauer</twitter>
+    	  <name>Joe Lauer (twitter: @jjlauer)</name>
         </developer>
       </developers>
     )
