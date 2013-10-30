@@ -6,7 +6,7 @@ import com.typesafe.sbt.SbtPgp._
 object ApplicationBuild extends Build {
 
   val appName         = "mfz-play-module-twitter"
-  val appVersion      = "1.0"
+  val appVersion      = "1.1"
 
   val appDependencies = Seq(
     "org.twitter4j" % "twitter4j-core" % "[3.0.3,)",

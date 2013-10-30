@@ -72,21 +72,24 @@ public class TwitterPlugin extends Plugin {
     		Logger.warn("Unable to verify twitter plugin will work", e);
     	}
         
-    	// create job that will be run to update
-    	RefreshJob job = new RefreshJob(this);
-    	// force it to run at startup so tweets are immediately available
-    	job.run();
-
-    	// create job to run every X milliseconds
-    	String dispatcherName = "TwitterUpdateJob";
-        Logger.info("Scheduling job [" + dispatcherName + "] to run every [" + this.refreshInterval + " ms]");
-        MessageDispatcher dispatcher = Akka.system().dispatchers().lookup(dispatcherName);
-	    Akka.system().scheduler().schedule(
-        	FiniteDuration.create(0, TimeUnit.MILLISECONDS),
-        	FiniteDuration.create(this.refreshInterval, TimeUnit.MILLISECONDS),
-        	job,
-            dispatcher
-        );
+    	if (this.refreshInterval <= 0) {
+    		Logger.info("twitter plugin: refreshInterval <= 0; skipping refresh job");
+    	} else {
+	    	// create job that will be run to update
+	    	RefreshJob job = new RefreshJob(this);
+	    	// force it to run at startup so tweets are immediately available
+	    	job.run();
+	
+	    	// create job to run every X milliseconds
+	    	String dispatcherName = "TwitterUpdateJob";
+	        Logger.info("Scheduling job [" + dispatcherName + "] to run every [" + this.refreshInterval + " ms]");
+	        Akka.system().scheduler().schedule(
+	        	FiniteDuration.create(0, TimeUnit.MILLISECONDS),
+	        	FiniteDuration.create(this.refreshInterval, TimeUnit.MILLISECONDS),
+	        	job,
+	        	Akka.system().dispatcher()
+	        );
+    	}
         
         Logger.info("twitter plugin: started");
     }
