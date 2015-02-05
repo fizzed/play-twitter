@@ -1,5 +1,5 @@
-Sprockets for PlayFramework
-================================
+Twitter for PlayFramework
+=========================
 
  - [Fizzed, Inc.](http://fizzed.com)
  - Joe Lauer (Twitter: [@jjlauer](http://twitter.com/jjlauer))
