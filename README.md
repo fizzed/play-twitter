@@ -31,7 +31,7 @@ dependencies list, in `build.sbt` or `Build.scala` file:
 
 ```scala
 libraryDependencies ++= Seq(
-  "com.fizzed" %% "fizzed-play-module-twitter" % "2.1.0"
+  "com.fizzed" %% "fizzed-play-module-twitter" % "2.2.0"
 )
 ```
 
@@ -51,7 +51,7 @@ object ApplicationBuild extends Build {
     javaCore,
     javaJdbc,
     javaEbean,
-    "com.fizzed" %% "fizzed-play-module-twitter" % "2.1.0"
+    "com.fizzed" %% "fizzed-play-module-twitter" % "2.2.0"
   )
   
   ...
@@ -63,7 +63,10 @@ object ApplicationBuild extends Build {
 
 ### conf/play.plugins
 
-Add ```1000:com.fizzed.play.twitter.TwitterPlugin```
+Create this configuration file if it doesn't exist. Add this line to activate
+the plugin at runtime.
+
+```1000:com.fizzed.play.twitter.TwitterPlugin```
 
 ### conf/application.conf
 
@@ -72,7 +75,6 @@ twitter.access-token = "required: replace with twitter access token"
 twitter.access-secret =  "required: replace with twitter access secret"
 twitter.consumer-key = "required: replace with twitter consumer key"
 twitter.consumer-secret = "required: replace with twitter consumer secret"
-# optional
 twitter.refresh-interval = 60m
 ```
 

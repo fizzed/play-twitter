@@ -15,7 +15,10 @@
     <body>
     	<div class="twitter">
         @for(t <- Application.twitter().tweets()) {
-        	@Html(com.fizzed.play.twitter.TweetRenderer.renderHtml(t))	
+           @Html(com.fizzed.play.twitter.TweetRenderer.renderHtml(t))	
+        }
+	@if(Application.twitter().tweets().isEmpty()) {
+           Your twitter feed either contains no tweets OR you did not edit conf/application.conf with your Twitter API keys.	
         }
         </div>
     </body>

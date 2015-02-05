@@ -5,7 +5,9 @@ logLevel := Level.Warn
 resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/"
 
 // Use the Play sbt plugin for Play projects
-addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.2.6")
+addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.3.7")
 
-// for PGP signing
-addSbtPlugin("com.typesafe.sbt" % "sbt-pgp" % "0.8")
+// no web plugins required
+
+// PGP signing
+addSbtPlugin("com.jsuereth" % "sbt-pgp" % "1.0.0")
