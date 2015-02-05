@@ -17,6 +17,7 @@ display -- or using the advanced object model to render your own.
 
 | PlayFramework version | Module version | 
 |:----------------------|:---------------|
+| 2.3.x                 | 2.2.0          |
 | 2.2.x                 | 2.1.0          |
 | 2.1.x                 | 2.0.1          |
 

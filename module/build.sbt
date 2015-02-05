@@ -1,6 +1,6 @@
 name := "fizzed-play-module-twitter"
 
-version := "2.2.0-SNAPSHOT"
+version := "2.2.0"
 
 startYear := Some(2013)
 
