@@ -6,11 +6,11 @@ import com.typesafe.sbt.SbtPgp._
 object ApplicationBuild extends Build {
 
   val appName         = "fizzed-play-module-twitter"
-  val appVersion      = "2.0.0"
+  val appVersion      = "2.0.1"
 
   val appDependencies = Seq(
     "org.twitter4j" % "twitter4j-core" % "4.0.2",
-    "com.twitter" % "twitter-text" % "1.11.0",
+    "com.twitter" % "twitter-text" % "1.6.1",
     javaCore,
     javaJdbc,
     javaEbean
