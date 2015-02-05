@@ -17,7 +17,8 @@ display -- or using the advanced object model to render your own.
 
 | PlayFramework version | Module version | 
 |:----------------------|:---------------|
-| 2.1.x                 | 2.0.0          |
+| 2.2.x                 | 2.1.0          |
+| 2.1.x                 | 2.0.1          |
 
 
 ## Usage
@@ -30,7 +31,7 @@ dependencies list, in `build.sbt` or `Build.scala` file:
 
 ```scala
 libraryDependencies ++= Seq(
-  "com.fizzed" %% "fizzed-play-module-twitter" % "2.0.0"
+  "com.fizzed" %% "fizzed-play-module-twitter" % "2.1.0"
 )
 ```
 
@@ -50,7 +51,7 @@ object ApplicationBuild extends Build {
     javaCore,
     javaJdbc,
     javaEbean,
-    "com.fizzed" %% "fizzed-play-module-twitter" % "2.0.0"
+    "com.fizzed" %% "fizzed-play-module-twitter" % "2.1.0"
   )
   
   ...

@@ -1,6 +1,9 @@
 Twitter for PlayFramework
 =========================
 
+## 2.1.0 - 2015-02-05
+ - Updated for Play 2.2.x
+
 ## 2.0.1 - 2015-02-04
  - Fixed dependency issue with twitter4j
 
