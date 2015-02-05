@@ -1,6 +1,6 @@
 package controllers;
 
-import com.mfizz.play.twitter.TwitterPlugin;
+import com.fizzed.play.twitter.TwitterPlugin;
 
 import play.*;
 import play.mvc.*;

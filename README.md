@@ -1,30 +1,69 @@
-play-module-twitter
-===========================================================
+Sprockets for PlayFramework
+================================
 
-Play framework 2.x module to fetch, cache, and display tweets from Twitter
+ - [Fizzed, Inc.](http://fizzed.com)
+ - Joe Lauer (Twitter: [@jjlauer](http://twitter.com/jjlauer))
 
-By Mfizz Inc (http://mfizz.com)
 
-Resilient against Twitter API downtime by maintaining a cached copy of the last
-successful API call. Basic rendering of tweets into html for simple display.
-Published to Maven Central for quick and easy installation as a dependency.
+## Overview
 
-Project: http://mfizz.com/oss/play-module-twitter
+[Play Framework](http://www.playframework.org/) 2.x. to fetch, cache, and display
+tweets from Twitter. Resilient against Twitter API downtime by maintaining a cached
+copy of the last successful API call. Basic rendering of tweets into html for simple
+display -- or using the advanced object model to render your own.
 
-How-to guide for creating Play 2.x modules using this project as an example:
-http://mfizz.com/blog/2013/07/play-framework-module-maven-central
 
-## Installation
+## Compatibility matrix
 
-The module is published to Maven central.
+| PlayFramework version | Module version | 
+|:----------------------|:---------------|
+| 2.1.x                 | 2.0.0          |
 
-Play framework 2.x:
 
-* add ```"com.mfizz" %% "mfz-play-module-twitter" % "1.0"``` to your dependencies (```project/Build.scala```)
+## Usage
 
-* add ```1000:com.mfizz.play.twitter.TwitterPlugin``` to your ```conf/play.plugins```
+This module is published to Maven Central.  You will need to include the module in your
+dependencies list, in `build.sbt` or `Build.scala` file:
 
-The following parameters can be configured in ```conf/application.conf```
+
+### build.sbt
+
+```scala
+libraryDependencies ++= Seq(
+  "com.fizzed" %% "fizzed-play-module-twitter" % "2.0.0"
+)
+```
+
+### Build.scala
+
+```scala
+import sbt._
+import Keys._
+import play.Project._
+
+object ApplicationBuild extends Build {
+
+  val appName         = "sample"
+  val appVersion      = "1.0-SNAPSHOT"
+
+  val appDependencies = Seq(
+    javaCore,
+    javaJdbc,
+    javaEbean,
+    "com.fizzed" %% "fizzed-play-module-twitter" % "2.0.0"
+  )
+  
+  ...
+}
+
+
+## Configuration
+
+### conf/play.plugins
+
+Add ```1000:com.fizzed.play.twitter.TwitterPlugin```
+
+### conf/application.conf
 
 ```
 twitter.access-token = "required: replace with twitter access token"
@@ -35,12 +74,12 @@ twitter.consumer-secret = "required: replace with twitter consumer secret"
 twitter.refresh-interval = 60m
 ```
 
-## Using it from Java: 
+### From a Java-based controller
 
 ```java
 package controllers;
 
-import com.mfizz.play.twitter.TwitterPlugin;
+import com.fizzed.play.twitter.TwitterPlugin;
 
 import play.*;
 import play.mvc.*;
@@ -60,6 +99,7 @@ public class Application extends Controller {
 }
 ```
 
-## License
+### From a Scala-based controller
 
-See LICENSE.txt
+TODO. Will work just need someone from community to submit an example.
+

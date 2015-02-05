@@ -1,4 +1,4 @@
-package com.mfizz.play.twitter;
+package com.fizzed.play.twitter;
 
 import play.Logger;
 import twitter4j.ResponseList;

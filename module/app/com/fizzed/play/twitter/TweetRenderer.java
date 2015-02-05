@@ -1,4 +1,4 @@
-package com.mfizz.play.twitter;
+package com.fizzed.play.twitter;
 
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;

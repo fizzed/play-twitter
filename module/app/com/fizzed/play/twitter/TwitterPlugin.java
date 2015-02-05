@@ -1,4 +1,4 @@
-package com.mfizz.play.twitter;
+package com.fizzed.play.twitter;
 
 import java.util.ArrayList;
 import java.util.List;

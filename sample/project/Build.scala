@@ -4,11 +4,10 @@ import play.Project._
 
 object ApplicationBuild extends Build {
 
-  val appName         = "mfz-play-module-twitter-sample"
+  val appName         = "fizzed-play-module-twitter-sample"
   val appVersion      = "1.0-SNAPSHOT"
 
   val appDependencies = Seq(
-    // Add your project dependencies here,
     javaCore,
     javaJdbc,
     javaEbean
@@ -18,9 +17,8 @@ object ApplicationBuild extends Build {
   val module = RootProject(file("../module"))
 
   val main = play.Project(appName, appVersion, appDependencies).settings(
-    organization := "com.mfizz",
-    organizationName := "Mfizz Inc",
-    organizationHomepage := Some(new URL("http://mfizz.com"))
+    organization := "com.fizzed",
+    organizationName := "Fizzed, Inc.",
+    organizationHomepage := Some(new URL("http://fizzed.com"))
   ).dependsOn(module)
-
 }
