@@ -1,6 +1,9 @@
 Twitter for PlayFramework
 =========================
 
+## 2.0.1 - 2015-02-04
+ - Fixed dependency issue with twitter4j
+
 ## 2.0.0 - 2015-02-04
  - Migrated package from com.mfizz to com.fizzed
  - API is compatible, just need to update package names
