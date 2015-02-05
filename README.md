@@ -55,6 +55,7 @@ object ApplicationBuild extends Build {
   
   ...
 }
+```
 
 
 ## Configuration
