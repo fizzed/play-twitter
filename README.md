@@ -77,6 +77,8 @@ twitter.refresh-interval = 60m
 
 ### From a Java-based controller
 
+See `samples` project for full example.
+
 ```java
 package controllers;
 
