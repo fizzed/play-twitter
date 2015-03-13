@@ -1,6 +1,9 @@
 Twitter for PlayFramework
 =========================
 
+## 2.2.0 - 2015-02-05
+ - Updated for Play 2.3.x
+
 ## 2.1.0 - 2015-02-05
  - Updated for Play 2.2.x
 

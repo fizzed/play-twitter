@@ -67,7 +67,7 @@ object ApplicationBuild extends Build {
 Create this configuration file if it doesn't exist. Add this line to activate
 the plugin at runtime.
 
-```1000:com.fizzed.play.twitter.TwitterPlugin```
+`1000:com.fizzed.play.twitter.TwitterPlugin`
 
 ### conf/application.conf
 
@@ -81,7 +81,7 @@ twitter.refresh-interval = 60m
 
 ### From a Java-based controller
 
-See `samples` project for full example.
+See [fizzed-java-sample](https://github.com/fizzed/play-module-twitter/tree/master/sample/fizzed-java-sample) project for full example.
 
 ```java
 package controllers;
@@ -108,5 +108,23 @@ public class Application extends Controller {
 
 ### From a Scala-based controller
 
-TODO. Will work just need someone from community to submit an example.
+See [fizzed-scala-sample](https://github.com/fizzed/play-module-twitter/tree/master/sample/fizzed-scala-sample) project for full example.
 
+```scala
+package controllers
+
+import com.fizzed.play.twitter.TwitterPlugin
+
+import play.api._
+import play.api.mvc._
+
+object Application extends Controller {
+
+  val TWITTER_PLUGIN = Play.current.plugin[TwitterPlugin]
+
+  def index = Action {
+    Ok(views.html.index("Fizzed Twitter Module Sample"))
+  }
+
+}
+```

@@ -1,0 +1,16 @@
+@(title: String)
+
+@main(title) {
+	
+	<div class="twitter">
+        @Application.TWITTER_PLUGIN.map { twitPlugin =>
+        	@twitPlugin.tweets.map { tweet =>
+        		@Html(com.fizzed.play.twitter.TweetRenderer.renderHtml(tweet))
+        	}
+        	@if(twitPlugin.tweets.isEmpty) {
+        		Your twitter feed either contains no tweets OR you did not edit conf/application.conf with your Twitter API keys.
+        	}
+    	}
+    </div>
+    
+}

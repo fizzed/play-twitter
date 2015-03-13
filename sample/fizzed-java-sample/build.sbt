@@ -1,4 +1,4 @@
-name := "fizzed-play-module-twitter-sample"
+name := "fizzed-java-sample"
 
 version := "1.0-SNAPSHOT"
 
@@ -8,7 +8,7 @@ organizationName := "Fizzed, Inc."
 
 organizationHomepage := Some(new URL("http://fizzed.com"))
 
-lazy val module = RootProject(file("../module"))
+lazy val module = RootProject(file("../../module"))
 
 lazy val root = (project in file(".")).enablePlugins(PlayJava).dependsOn(module)
 
